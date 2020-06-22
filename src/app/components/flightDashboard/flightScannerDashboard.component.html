@@ -1,0 +1,50 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-6" *ngFor="let flight of flightList">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="row" *ngFor="let leg of flight.legModellist">
+            <div class="col-xs-2">
+              <img height="50" width="50" src="{{leg.getairLineLogoImageUrl()}}" />
+            </div>
+            <div class="col-xs-2 m-10">
+              <div class="h4 m-0">{{leg.departureDisplayTime()}}</div>
+              <div>{{leg.departure_airport}}</div>
+            </div>
+            <div class="col-xs-1 m-10">
+              <i class="icon-arrow-right icons font-2xl d-block mt-2 clearfix"></i>
+            </div>
+            <div class="col-xs-2 m-10">
+              <div class="h4 m-0">{{leg.arrivalDisplayTime()}}</div>
+              <div>{{leg.arrival_airport}}</div>
+            </div>
+            <div class="col-xs-3 wd-100">
+            </div>
+            <div class="col-xs-2 text-lg-right">
+              <div class="h5 m-0">{{leg.tripDisplayTime()}}</div>
+              <div>{{leg.stopsDisplay()}}</div>
+            </div>
+          </div>
+          <div class="row">
+
+          </div>
+
+          <div class="row">
+            <div class="col-xs-10 m-50">
+              <br />
+              <div class="h1 m-0">{{flight.price}}</div>
+              <small>{{flight.agent}}</small>
+              <br />
+            </div>
+            <div class="col-xs-2">
+              <br />
+              <br />
+              <button class="btn btn-primary pull-right btn-pr" type="button">Select</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
